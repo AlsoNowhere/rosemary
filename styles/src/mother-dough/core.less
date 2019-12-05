@@ -1,0 +1,305 @@
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+
+	&.space-between {
+		justify-content: space-between;
+	}
+
+	&.right {
+		justify-content: flex-end;
+	}
+
+	&.forced {
+		flex-flow: initial;
+	}
+}
+
+.none {
+	display: none;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+
+	&.pinned {
+		top: 0;
+		left: 0;
+
+		&.right {
+			left: initial;
+			right: 0;
+		}
+	}
+
+	&.full {
+		.pinned;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.fixed {
+	position: fixed;
+}
+
+.z-index {
+	z-index: 1;
+}
+
+.middle {
+	.absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.width-full {
+	width: 100%;
+}
+
+.width {
+	width: @size;
+}
+
+.height-full {
+	height: 100%;
+}
+
+.height {
+	height: @size;
+}
+
+.constrain {
+	width: 950px;
+	.centre;
+}
+
+.reset-margin {
+	margin: 0;
+}
+
+.reset-padding {
+	padding: 0;
+}
+
+.centre {
+	margin: 0 auto;
+}
+
+.push-out {
+	margin-left: @gap;
+}
+
+.margin-bottom {
+	margin-bottom: @gap;
+}
+
+.margin-bottom-large {
+	margin-bottom: @size;
+}
+
+.margin-left {
+	margin-left: @gap;
+}
+
+.margin-left-large {
+	margin-left: @size;
+}
+
+.margin-top {
+	margin-top: @gap;
+}
+
+.margin-top-large {
+	margin-top: @size;
+}
+
+.margin-bottom {
+	margin-bottom: @gap;
+}
+
+.margin-bottom-large {
+	margin-bottom: @size;
+}
+
+.margin-right {
+	margin-right: @gap;
+}
+
+.margin-right-large {
+	margin-right: @size;
+}
+
+.padding {
+	padding: @gap;
+}
+
+.padded {
+	padding: 0 @gap;
+}
+
+.padding-large {
+	padding: @size;
+}
+
+.padding-bowl-large {
+	padding: 0 @size @size;
+}
+
+.padded-large {
+	padding: 0 @largeSize;
+}
+
+.padded-left {
+	padding-left: @gap;
+}
+
+.padded-left-large {
+	padding-left: @size;
+}
+
+.padded-top {
+	padding-top: @gap;
+}
+
+.padded-top-large {
+	padding-top: @size;
+}
+
+.padded-bottom {
+	padding-bottom: @gap;
+}
+
+.padded-bottom-large {
+	padding-bottom: @size;
+}
+
+.padded-right {
+	padding-right: @gap;
+}
+
+.padded-right-large {
+	padding-right: @size;
+}
+
+.second-bg {
+	background-color: @theme-second;
+}
+
+.third-bg {
+	background-color: @theme-third;
+}
+
+.grey-bg {
+	background-color: @theme-grey;
+}
+
+.light-grey-bg {
+	background-color: @theme-light-grey;
+}
+
+.white-bg {
+	background-color: #fff;
+}
+
+.shadow {
+	box-shadow: 2px 2px 2px @theme-grey;
+}
+
+.border {
+	border: 1px solid @theme-grey;
+
+	&.light {
+		border-color: lightgrey;
+	}
+}
+
+.round {
+	border-radius: 50%;
+}
+
+.rounded {
+	border-radius: 4px;
+}
+
+.no-rounding {
+	border-radius: 0;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.blocked {
+	cursor: not-allowed;
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.trim {
+	overflow: hidden;
+}
+
+.scroll-left {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// Animations and transitions
+.transition {
+	transition: 0.3s;
+}
+
+.fade-in {
+	animation: @time fade-in forwards;
+}
+
+.spin {
+	animation: @time spin linear infinite;
+}
+
+// Runs and overwrites last
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.remove {
+	display: none;
+
+	&.clear {
+		display: block;
+		display: initial;
+	}
+}

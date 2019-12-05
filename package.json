@@ -1,0 +1,19 @@
+{
+    "name": "tools",
+    "version": "1.0.0",
+    "description": "Rosemary",
+    "main": "index.js",
+    "scripts": {
+        "lint:less": ".\\node_modules\\.bin\\stylelint \"./afs-styles/src**/*.less\" --config ./afs-styles/config/.stylelintrc",
+        "build-services": ".\\node_modules\\.bin\\gulp build-services",
+        "watch-services": ".\\node_modules\\.bin\\gulp watch-services"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "stylelint": "^10.1.0",
+        "stylelint-config-recommended": "^2.2.0",
+        "rollup": "^1.21.2"
+    }
+}

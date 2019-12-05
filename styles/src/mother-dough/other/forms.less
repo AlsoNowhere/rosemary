@@ -1,0 +1,190 @@
+
+.field-focus {
+	box-shadow: 1px 1px 2px 1px @theme-third;
+}
+
+label.checkbox {
+	.relative;
+}
+
+input {
+	&[type=radio].radio {
+		~ span.check {
+			border-radius: 50%;
+		}
+	}
+
+	&[type=checkbox].checkbox {
+		~ span.check {
+			border-radius: 1px;
+		}
+	}
+
+	&[type=checkbox].checkbox,
+	&[type=radio].radio {
+		width: @size;
+		min-width: @size;
+		height: @size;
+		.absolute;
+		.invisible;
+
+		~ span.check {
+			.absolute;
+			bottom: 0;
+			.inline-block;
+			width: @largeSize;
+			min-width: @largeSize;
+			height: @largeSize;
+			background-color: #fff;
+			border: 1px solid lightgrey;
+
+			&.middle {
+				.middle;
+			}
+
+			> * {
+				opacity: 0;
+			}
+		}
+
+		&:checked {
+			~ span.check > * {
+				opacity: 1;
+			}
+		}
+
+		&:focus ~ span.check {
+			outline: none;
+			.field-focus;
+		}
+
+		&[disabled] ~ span.check {
+			background-color: #e2e2e2;
+			cursor: not-allowed;
+		}
+	}
+
+	&[type=file] {
+		.absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		~ span.for-file {
+			.block;
+			.width-full;
+			height: @largeSize;
+			.padded;
+			background-color: #fff;
+			border: 1px solid lightgrey;
+			border-bottom: 2px solid lightgrey;
+			line-height: 38px;
+			.pointer;
+		}
+
+		&:focus ~ span.for-file {
+			outline: none;
+			.field-focus;
+		}
+
+		&[disabled] ~ span.for-file {
+			background-color: #e2e2e2;
+			cursor: not-allowed;
+		}
+	}
+}
+
+form {
+	div.react-datepicker-wrapper {
+		.margin-bottom;
+	}
+
+	div.react-datepicker-wrapper,
+	div.react-datepicker__input-container {
+		.block;
+	}
+
+	label > input,
+	label > textarea,
+	label > select,
+	div.react-datepicker-wrapper input {
+		.width-full;
+		height: @largeSize;
+		.padded;
+		background-color: #fff;
+		border: 2px solid lightgrey;
+		font-size: 18px;
+		.default-font;
+		.transition;
+
+		&::placeholder {
+			color: darkgrey;
+		}
+
+		&:focus {
+			outline: none;
+			.field-focus;
+		}
+
+		&[disabled] {
+			background-color: #e2e2e2;
+			cursor: not-allowed;
+		}
+	}
+
+	label {
+		.block;
+		.margin-bottom;
+
+		&.checkbox {
+			height: 68px;
+		}
+
+		&.radio {
+			.relative;
+			height: 68px;
+		}
+
+		span {
+			.block;
+
+			&.validator-error {
+				.text-danger;
+			}
+		}
+
+		> textarea {
+			height: 108px;
+			padding: @gap;
+			resize: none;
+		}
+
+		&.page-search {
+			.reset-margin;
+
+			input {
+				max-width: 220px;
+			}
+		}
+
+		&.required > span:first-child::after {
+			content: "*";
+			color: tomato;
+		}
+	}
+
+	fieldset {
+		.reset-padding;
+		border: none;
+
+		> legend {
+			.margin-bottom;
+			.reset-padding;
+
+			&.required::after {
+				content: "*";
+				color: tomato;
+			}
+		}
+	}
+}

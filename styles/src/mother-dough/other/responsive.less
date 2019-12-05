@@ -1,0 +1,20 @@
+
+
+.abstract-size-part-A(@i: length(@mediaNames)) when (@i > 0) {
+    @l: extract(@mediaNames, @i);
+    @m: extract(@mediaSizes, @i);
+
+    @media screen and (max-width: @m) {
+        .when-@{l}-hide {
+            .none;
+        }
+    }
+    @media screen and (min-width: @m) {
+        .when-@{l}-show {
+            .none;
+        }
+    }
+
+    .abstract-size-part-A((@i - 1));
+}
+.abstract-size-part-A;

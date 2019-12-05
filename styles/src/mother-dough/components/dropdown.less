@@ -1,0 +1,174 @@
+
+div.dropdown-component,
+div.multi-select-component {
+	.relative;
+	.margin-bottom;
+
+	&.required > span:first-child::after {
+		content: "*";
+		color: tomato;
+	}
+
+	button,
+	> div {
+		.block;
+		.relative;
+		.z-index;
+		.width-full;
+		min-height: 42px;
+		background-image: none;
+		background-image: initial;
+		background-color: #fff;
+		border: 2px solid lightgrey;
+		color: #444;
+		text-align: left;
+		.pointer;
+
+		&[disabled] {
+			background-color: #e2e2e2;
+			cursor: not-allowed;
+		}
+
+		span.caret {
+			.absolute;
+			top: 12px;
+			right: 3px;
+			transform: scale(0.6, 1.4);
+		}
+	}
+
+	input {
+		.absolute;
+		bottom: @gap * 3;
+		left: 0;
+		.width-full;
+		height: 1px;
+		.invisible;
+		.reset-padding;
+		border: none;
+		.default-font;
+		font-size: 18px;
+	}
+
+	ul {
+		.reset-list;
+		.remove;
+		.reset-list;
+		.absolute;
+		z-index: 5;
+		left: @gap;
+		.width-full;
+		max-height: 300px;
+		overflow-y: auto;
+		background-color: #fff;
+		.shadow;
+		opacity: 0;
+
+		&.label {
+			opacity: 1;
+			animation: 0.3s slide-fade-up-dropdown forwards;
+		}
+
+		&.no-label {
+			animation: 0.3s slide-fade-up-dropdown-no-label forwards;
+		}
+
+		&.active {
+			.clear;
+		}
+
+		> li {
+			.relative;
+			.padding;
+			.pointer;
+			.transition;
+
+			&:hover {
+				background-color: lightgrey;
+			}
+
+			&.search {
+				transition: initial;
+
+				&:hover {
+					background-color: initial;
+				}
+
+				input {
+					position: static;
+					top: initial;
+					left: initial;
+					.width-full;
+					height: @largeSize;
+					opacity: 1;
+				}
+			}
+
+			&.active {
+				.second-bg;
+			}
+
+			span.initials {
+				.absolute;
+				top: 4px;
+				left: 4px;
+				width: 42px - 8px;
+				height: 42px - 8px;
+				background-color: @theme-second;
+				border-radius: 50%;
+				color: #fff;
+				line-height: 42px - 9px;
+				text-align: center;
+			}
+
+			span {
+				position: static;
+				background-color: transparent;
+				border-radius: 0;
+				color: initial;
+				line-height: @size;
+
+				&.text-white {
+					.text-white;
+				}
+
+				+ span {
+					margin-left: @size + @gap;
+				}
+			}
+		}
+	}
+
+	.select-item {
+		.inline-block;
+		.relative;
+		.height-full;
+		.push-out;
+		.padded;
+		padding-right: 38px + @gap;
+		background-image: linear-gradient(to right, @theme-second, @theme-third);
+		line-height: 38px;
+		color: #fff;
+
+		button {
+			.absolute;
+			top: 0;
+			right: 0;
+			width: 38px;
+			height: 38px;
+			.reset-padding;
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			.transition;
+
+			&:hover {
+				background-color: darkgrey;
+			}
+
+			> span {
+				.middle;
+			}
+		}
+	}
+}

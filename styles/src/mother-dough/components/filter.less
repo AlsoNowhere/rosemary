@@ -1,0 +1,38 @@
+
+div.filter-component {
+	.relative;
+
+	ul {
+		.remove;
+		.reset-list;
+		.absolute;
+		z-index: 3;
+		top: @largeSize + 20px;
+		left: @gap;
+		width: 220px;
+		.shadow;
+		opacity: 0;
+		animation: 0.3s slide-fade-up forwards;
+
+		&.active {
+			.clear;
+		}
+
+		> li {
+			.padding;
+			background-color: #fff;
+			.border;
+			border-collapse: collapse;
+			.pointer;
+			.transition;
+
+			&:hover {
+				background-color: lightgrey;
+			}
+
+			&.third-bg {
+				.third-bg;
+			}
+		}
+	}
+}

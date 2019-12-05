@@ -1,0 +1,95 @@
+
+button {
+	.padded;
+	background-image: linear-gradient(to right, @theme-second, @theme-third);
+	border: none;
+	border-radius: 1px;
+	box-shadow: none;
+	.line-height;
+	color: #fff;
+	font-size: 18px;
+	.pointer;
+	.transition;
+
+	&:hover {
+		background-image: linear-gradient(to right, @theme-second, @theme-second);
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 1px 1px 2px 1px @theme-third;
+	}
+
+	&.empty {
+		background-image: none;
+		background-image: initial;
+		background-color: transparent;
+		color: #000;
+		color: initial;
+
+		&:hover {
+			background-color: @theme-grey;
+		}
+	}
+
+	&.link {
+		.reset-padding;
+
+		> a {
+			.block;
+			.width-full;
+			.padded;
+			color: #fff;
+			text-decoration: none;
+		}
+
+		&.large {
+			.reset-padding;
+
+			> a {
+				.padded-large;
+			}
+		}
+	}
+
+	&.large {
+		line-height: @largeSize;
+		.padded-large;
+
+		&.padded {
+			.padded;
+		}
+	}
+
+	&.menu {
+		display: block;
+		color: chartreuse;
+	}
+
+	&.grey {
+		background-image: none;
+		background-image: initial;
+		background-color: darkgrey;
+
+		&:hover {
+			background-color: grey;
+		}
+	}
+
+	&.danger {
+		background-image: none;
+		background-image: initial;
+		background-color: tomato;
+
+		&:hover {
+			background-color: red;
+		}
+	}
+
+	&[disabled] {
+		background-image: none;
+		background-image: initial;
+		background-color: darkgrey;
+		.blocked;
+	}
+}

@@ -1,0 +1,87 @@
+
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url('../resources/fonts/Open-Sans-Regular/Open-Sans-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url('../resources/fonts/Gotham-Bold/Gotham-Bold.otf') format('opentype');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	.reset-margin;
+	font-size: 18px;
+}
+
+body,
+textarea {
+	.default-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	.reset-margin;
+	color: @theme-second;
+	.header-font;
+}
+
+div.main {
+	.width-full;
+	min-height: calc(100vh - 84px);
+
+	> header {
+		.block;
+		z-index: 3;
+		height: @hero-header;
+		padding-top: @headerHeight - 1px;
+		overflow: hidden;
+
+		&::before {
+			.remove;
+		}
+
+		img {
+			.block;
+			.absolute;
+			top: -350px;
+			.width-full;
+			height: auto;
+		}
+
+		h2 {
+			.relative;
+			.z-index;
+			color: #fff;
+			line-height: 141px;
+			font-size: 50px;
+			text-align: center;
+
+			&::before {
+				content: "";
+				.block;
+				.absolute;
+				.pinned;
+				bottom: 0;
+				right: 0;
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+
+			> span {
+				.relative;
+			}
+		}
+	}
+}
