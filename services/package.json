@@ -1,0 +1,8 @@
+{
+	"name": "services",
+	"version": "1.0.16",
+	"description": "This package",
+	"main": "services.js",
+	"author": "AFS",
+	"license": "ISC"
+}

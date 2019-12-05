@@ -1,0 +1,10 @@
+
+This is a node script that allows Juan to add a new component to a react app.
+ - Adds a new component with boilder plate.
+ - Adds this into the folder perscribed. If this folder does not exists it will create it.
+ - Adds the new route into the App.js file
+ - Adds the import for the route into App.js
+
+Use by defining a component name and a path of where it should sit:
+
+node add-route Example /src/components/common/example

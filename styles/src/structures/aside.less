@@ -1,0 +1,21 @@
+
+aside {
+	.fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 4;
+	width: 220px;
+	height: 100vh;
+	padding-top: @size * 2;
+
+	ul {
+		.reset-list;
+		.padded;
+
+		button.large {
+			.header-font;
+			padding: 0 @gap;
+		}
+	}
+}

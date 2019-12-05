@@ -1,0 +1,19 @@
+
+This is a node script that allows turning a C# model into a modellerizer model.
+
+It turns the following:
+public string Example { get; set; }
+into this:
+model.add("Example","string");
+
+It adds attributes:
+[Required]
+public string Example { get; set; }
+->
+model.add("Example","string");
+model.validation("Example","Required");
+
+Use by defining the .cs file to target from (no need to put .cs on the end)
+and the name of the .js file to create or overwrite (no need to put .js on the end):
+
+node modellerizer User user

@@ -1,0 +1,43 @@
+
+label.toggle {
+	.relative;
+
+	> input[type=checkbox] {
+		.absolute;
+		.pinned;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		+ span.toggle {
+			.block;
+			.relative;
+			width: @size * 2;
+			height: @size;
+			border: 1px solid lightgrey;
+			background-color: #fff;
+			.pointer;
+			.transition;
+
+			> span {
+				.absolute;
+				.pinned;
+				width: @size - 2px;
+				height: @size - 2px;
+				background-color: #fff;
+				border: 1px solid lightgrey;
+				.transition;
+			}
+		}
+
+		&:checked {
+			+ span.toggle {
+				background-color: @theme-second;
+
+				> span {
+					left: @size;
+				}
+			}
+		}
+	}
+}

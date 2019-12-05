@@ -1,0 +1,156 @@
+
+div.table-responsive-wrapper {
+	.width-full;
+	.scroll-left;
+}
+
+table {
+	.width-full;
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 0 @gap;
+		background-color: #f8f8f8;
+		line-height: @size;
+		.no-wrap;
+	}
+
+	th {
+		.relative;
+		text-align: left;
+		background-image: linear-gradient(to right, @theme-second, @theme-third);
+		background-color: @theme-third;
+		color: #fff;
+		.header-font;
+
+		&:last-child {
+			&::after {
+				.remove;
+			}
+		}
+	}
+
+	td {
+		.relative;
+
+		&:last-child {
+			&::after {
+				.remove;
+			}
+		}
+
+		> label.checkbox {
+			height: @size;
+
+			input[type=checkbox] ~ span.check {
+				min-width: @size;
+				width: @size;
+				height: @size;
+			}
+		}
+
+		.highlighted {
+			background-image: linear-gradient(to right, @theme-second, @theme-third);
+			color: #fff;
+		}
+
+		.extended-row {
+			.relative;
+			.padding;
+
+			&::before {
+				content: "";
+				.absolute;
+				top: @gap;
+				left: @gap;
+				right: @gap;
+				height: 2px;
+				background-image: linear-gradient(to right, @theme-second, @theme-third);
+			}
+
+			> span {
+				.block;
+				.absolute;
+				top: @gap;
+				right: @gap;
+				width: @largeSize;
+				height: @largeSize;
+				background-color: #f8f8f8;
+
+				&::before,
+				&::after {
+					content: "";
+					.block;
+					.absolute;
+					top: -50%;
+					left: calc(50% - 2px);
+					width: @largeSize * 2 / 3;
+					height: @largeSize * 2 / 3;
+					transform: rotate(45deg);
+					transform-origin: 0% 0%;
+					box-shadow: 2px 2px 0 @theme-third;
+				}
+
+				&::after {
+					top: 0%;
+				}
+			}
+
+			> div + div {
+				padding-right: @largeSize;
+			}
+
+			h3 {
+				padding: 3px 0;
+
+				> span {
+					vertical-align: middle;
+
+					&.fa {
+						margin-right: @gap;
+						padding: 0 6px;
+						.second-bg;
+						border-radius: 50%;
+						color: #fff;
+						font-size: 14px;
+						text-align: center;
+						line-height: 22px;
+					}
+				}
+			}
+		}
+	}
+
+	select {
+		max-width: 300px;
+	}
+
+	tr {
+		&:nth-child(2n) td {
+			background-color: #f0f0f0;
+
+			div.extended-row > span {
+				background-color: #f0f0f0;
+			}
+		}
+
+		&.data {
+			height: 100px;
+		}
+
+		&.hover {
+			> th,
+			> td {
+				.transition;
+			}
+
+			&:hover {
+				> th,
+				> td {
+					.light-grey-bg;
+				}
+			}
+		}
+	}
+}

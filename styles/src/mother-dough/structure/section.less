@@ -1,0 +1,40 @@
+
+section {
+	// .constrain;
+	.width-full;
+	.centre;
+	.padding-large;
+
+	&.full {
+		.width-full;
+		padding: @size @size @size 220px + @size;
+		.reset-margin;
+	}
+
+	header::before {
+		content: "";
+		.remove;
+	}
+
+	> h2 {
+		.margin-bottom;
+	}
+
+	section.full {
+		.padding-large;
+	}
+}
+
+@media screen and (min-width:950px) {
+	section {
+		width: 950px;
+	}
+}
+
+article section {
+	.reset-padding;
+
+	pre {
+		white-space: pre-wrap;
+	}
+}

@@ -1,0 +1,147 @@
+
+header {
+	.flex;
+	.space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	.width-full;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	&::before {
+		content: "";
+		.absolute;
+		left: 0;
+		right: 0;
+		.width-full;
+		height: 10px;
+		background-image: linear-gradient(to right, @theme-second, @theme-third);
+	}
+
+	> h1 {
+		line-height: @size * 2;
+		color: #fff;
+	}
+
+	> a {
+		line-height: 114px;
+	}
+
+	img {
+		vertical-align: middle;
+		height: 70px;
+		margin-right: @size * 2;
+	}
+
+	ul {
+		height: @size * 2 + 1px;
+		.reset-margin;
+		.reset-padding;
+	}
+
+	ul li {
+		.inline-block;
+		line-height: 72px;
+		font-size: 19.2px;
+		.header-font;
+		font-weight: 600;
+		color: @theme-second;
+	}
+
+	nav {
+		span,
+		a {
+			.block;
+			height: @size * 2 + 1px;
+			line-height: @size * 2 + 2px;
+			font-size: 19.2px;
+			.header-font;
+			font-weight: 400;
+			color: #fff;
+			text-decoration: none;
+			.pointer;
+
+			&::after {
+				content: "";
+				.block;
+				.absolute;
+				bottom: 0;
+				.width-full;
+				height: 5px;
+				background-color: #fff;
+				opacity: 0;
+				.transition;
+			}
+
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+
+		> ul li {
+			.relative;
+			margin-right: @size;
+			line-height: @size * 2 + 1px;
+
+			> span + span {
+				.absolute;
+				left: 50%;
+				bottom: 5px;
+				height: 17px;
+				transform: translateX(-50%);
+				color: #fff;
+
+				&::after {
+					.remove;
+				}
+			}
+
+			> ul {
+				.remove;
+				.absolute;
+				top: @largeSize + @size * 2 + 1px;
+				left: 0;
+				width: 262px;
+				height: auto;
+				background-color: rgba(0, 0, 0, 0.7);
+				.no-wrap;
+				opacity: 0;
+				animation: 0.3s fade-up-header forwards;
+
+				&.visible {
+					.clear;
+
+					&.closing {
+						animation: 0.3s fade-down-header forwards;
+					}
+				}
+
+				> li {
+					.block;
+					.reset-margin;
+					.padded;
+				}
+
+				a {
+					.transition;
+
+					&::after {
+						.remove;
+					}
+
+					&:hover {
+						color: lightgrey;
+					}
+				}
+			}
+
+			&:last-child {
+				> ul {
+					left: initial;
+					right: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "components",
+	"version": "0.0.40",
+	"description": "This package",
+	"main": "components.js",
+	"scripts": {
+		"build:rollup": "rollup --config --watch",
+		"build:rollup:prod": "rollup --config"
+	},
+	"peerDependencies": {
+		"react": "^16.9.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
+		"@babel/preset-react": "^7.7.4",
+		"services": "file:../services",
+		"react-datepicker": "^2.10.1",
+		"rollup": "^1.27.5",
+		"rollup-plugin-babel": "^4.3.3",
+		"rollup-plugin-progress": "^1.1.1",
+		"rollup-plugin-uglify": "^6.0.3"
+	},
+	"author": "AFS",
+	"license": "ISC"
+}

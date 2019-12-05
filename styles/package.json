@@ -1,0 +1,17 @@
+{
+	"name": "styles",
+	"version": "0.0.2",
+	"description": "This package",
+	"main": "index.js",
+	"scripts": {
+		"lint:less": ".\\node_modules\\.bin\\stylelint \"./src**/*.less\" --config ./config/.stylelintrc"
+	},
+	"devDependencies": {
+		"less": "^3.10.3",
+		"stylelint": "^10.1.0",
+		"stylelint-config-recommended": "^2.2.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

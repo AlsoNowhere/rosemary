@@ -1,0 +1,23 @@
+
+._(@parts, @name) {
+	.grid-A(@i: length(@mediaNames)) when (@i > 0) {
+		@l: extract(@mediaNames, @i);
+		@m: extract(@mediaSizes, @i);
+
+		@media screen and (min-width: @m) {
+			.grid-B(@j: @parts) when (@j > 0) {
+				.grid@{name}@{l}-@{j} {
+					flex-basis: floor(100% / @parts * @j);
+					width: floor(100% / @parts * @j);
+				}
+
+				.grid-B((@j - 1));
+			}
+			.grid-B;
+		}
+		.grid-A((@i - 1));
+	}
+	.grid-A;
+}
+
+._(12, _);
